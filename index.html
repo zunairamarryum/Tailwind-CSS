@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-white text-black">
+  <header class="sticky top-0 z-50 bg-[#FFFFFF30]">
+    <nav class="bg-zinc-800  text-white flex items-center justify-between px-6 h-16">
+      <a href="#" class="text-2xl font-bold border-2 px-2 py-1">Furniture</a>
+
+      <!-- Toggle button -->
+      <button id="menu-toggle" class="lg:hidden cursor-pointer">
+        <i class="fa-solid fa-bars fa-lg"></i>
+      </button>
+
+      <!-- Desktop menu -->
+      <div class="hidden lg:flex items-center gap-8 text-lg font-bold">
+        <ul class="flex gap-6">
+          <li><a href="#" class="hover:text-red-600">Home</a></li>
+          <li><a href="#" class="hover:text-red-600">About</a></li>
+          <li><a href="#" class="hover:text-red-600">Services</a></li>
+          <li><a href="#" class="hover:text-red-600">Testimony</a></li>
+          <li><a href="#" class="hover:text-red-600">Contact</a></li>
+        </ul>
+        <div class="flex gap-4 items-center">
+          <button class="hover:text-red-600">Login</button>
+          <button class="bg-red-600 text-white rounded-lg px-4 py-1 hover:bg-red-700">Sign Up</button>
+        </div>
+      </div>
+
+      <!-- Mobile dropdown menu -->
+      <div id="mobile-menu"
+        class="absolute top-16 left-0 w-full bg-black flex flex-col items-center gap-6 py-4 text-lg font-bold lg:hidden transition-all duration-300 z-50">
+        <ul class="flex flex-col items-center gap-4">
+          <li><a href="#" class="hover:text-red-600">Home</a></li>
+          <li><a href="#" class="hover:text-red-600">About</a></li>
+          <li><a href="#" class="hover:text-red-600">Services</a></li>
+          <li><a href="#" class="hover:text-red-600">Testimony</a></li>
+          <li><a href="#" class="hover:text-red-600">Contact</a></li>
+        </ul>
+        <div class="flex flex-col items-center gap-4">
+          <button class="hover:text-red-600">Login</button>
+          <button class="bg-red-600 text-white rounded-lg px-4 py-1 hover:bg-red-700">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+    <script>
+      const toggleBtn = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      toggleBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed"
+    style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('bg-img.png')">
+    <div class="md:w-1/2 text-center text-white p-8">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Transform Your Space with Our Premium Furniture</h1>
+      <p class="md:text-xl text-lg mb-6">Crafting sleek, responsive interfaces that blend beauty with function.
+        I turn ideas into pixel-perfect realities—fast, modern, and user-focused.
+        Let’s build something that not only works but wows.</p>
+      <button class="bg-yellow-400 hover:bg-yellow-500 transition duration-300 text-black font-bold py-2 px-6 mr-4">Shop
+        Now</button>
+      <button
+        class="bg-yellow-400 hover:bg-yellow-500 transition duration-300 text-black font-bold py-2 px-6">Explore</button>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="container mx-auto mt-24">
+    <div class="flex flex-col md:flex-row items-center gap-8 p-4 md:p-0">
+      <div class="md:w-1/2 mb-4 md:mb-0 border border-dashed border-black p-2">
+        <img src="Images/About img.jpg" alt="About Us" class="w-full h-auto object-cover rounded-lgl" />
+      </div>
+      <div class="md:w-1/2 md:ml-4">
+        <span class="text-state-700 block mb-2"><i class="fa-solid fa-briefcase mr-2"></i>What We Do</span>
+        <h2 class="text-4xl font-bold mb-4">About Us</h2>
+        <p class="text-gray-700 mb:4 leading-8">Furniture is where design meets distinction—an atelier of craftsmanship
+          and innovation.
+          Designed for the discerning, our ever-evolving collection embodies an uncompromising pursuit of luxury,
+          sculptural elegance, and timeless form.</p>
+        <p class="text-gray-700 mb:4 leading-8">Your one-stop-shop for high-quality furniture at affordable prices. We
+          are a trusted furniture store
+          dedicated to providing quality products and exceptional service to our community.</p>
+
+        <div class="flex gap-4 mt-4 text-2xl">
+          <i class="fa-brands fa-facebook cursor-pointer hover:text-blue-600"></i>
+          <i class="fa-brands fa-square-instagram cursor-pointer hover:text-pink-500"></i>
+          <i class="fa-brands fa-youtube cursor-pointer hover:text-red-600"></i>
+          <i class="fa-brands fa-square-twitter cursor-pointer hover:text-blue-400"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+
+  <section class="container mx-auto py-12 mt-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 p-4 md:p-0 gap-8">
+
+      <!-- Item 1 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/Luxury Leather Sofa.png"
+          class="w-full h-100 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="Luxury leather sofa set">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Luxury Leather Sofa</h2>
+          <p class="text-gray-700 mb-4">Elegant brown leather sofa, perfect for modern living rooms with unmatched
+            comfort.</p>
+          <del class="mr-2 text-sm text-slate-400">$2500</del><span class="text-xl text-green-600">$1800</span>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/wooden dining.png"
+          class="w-full h-80 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="Wooden dining table set">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Wooden Dining Set</h2>
+          <p class="text-gray-700 mb-4">A six-seater solid wood dining table set, ideal for family gatherings and
+            dinners.</p>
+          <del class="mr-2 text-sm text-slate-400">$1700</del><span class="text-xl text-green-600">$1300</span>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/Upholstered King Bed.png" class="w-full h-80 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="King size upholstered bed">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Upholstered King Bed</h2>
+          <p class="text-gray-700 mb-4">Comfortable king-sized bed with premium fabric and sturdy frame for a restful
+            night.</p>
+          <del class="mr-2 text-sm text-slate-400">$2200</del><span class="text-xl text-green-600">$1750</span>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/study-table.png"
+          class="w-full h-80 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="Modern study table">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Modern Study Table</h2>
+          <p class="text-gray-700 mb-4">Compact and stylish table with drawers for work-from-home and study needs.</p>
+          <del class="mr-2 text-sm text-slate-400">$800</del><span class="text-xl text-green-600">$650</span>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/Ergonomic Chair.png"
+          class="w-full h-80 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="Ergonomic office chair">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Ergonomic Chair</h2>
+          <p class="text-gray-700 mb-4">Office chair with lumbar support and adjustable height, designed for all-day
+            comfort.</p>
+          <del class="mr-2 text-sm text-slate-400">$300</del><span class="text-xl text-green-600">$220</span>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/Contemporary Bookshelf.png"
+          class="w-full h-80 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="Contemporary bookshelf design">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Contemporary Bookshelf</h2>
+          <p class="text-gray-700 mb-4">Minimalist bookshelf with ample space for your favorite books and decor.</p>
+          <del class="mr-2 text-sm text-slate-400">$500</del><span class="text-xl text-green-600">$390</span>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/Industrial Floor Lamp.png"
+          class="w-full h-80 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="Industrial floor lamp">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Industrial Floor Lamp</h2>
+          <p class="text-gray-700 mb-4">Rustic black metal lamp with Edison bulbs, brings warm industrial vibes.</p>
+          <del class="mr-2 text-sm text-slate-400">$280</del><span class="text-xl text-green-600">$199</span>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/Velvet Accent Chair.png"
+          class="w-full h-80 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="Velvet accent chair">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Velvet Accent Chair</h2>
+          <p class="text-gray-700 mb-4">Soft velvet chair with gold legs, adds charm to any corner space.</p>
+          <del class="mr-2 text-sm text-slate-400">$450</del><span class="text-xl text-green-600">$320</span>
+        </div>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/Minimalist Bed Frame.png"
+          class="w-full h-80 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="Minimalist king size bed frame">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Minimalist Bed Frame</h2>
+          <p class="text-gray-700 mb-4">Sturdy platform bed with clean lines, fits both modern and cozy spaces.</p>
+          <del class="mr-2 text-sm text-slate-400">$980</del><span class="text-xl text-green-600">$750</span>
+        </div>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="shadow-lg rounded-lg overflow-hidden">
+        <img src="Images/Rattan Lounge Chair.png"
+          class="w-full h-80 object-cover hover:scale-[1.05] transition ease-in-out duration-300"
+          alt="Bohemian rattan lounge chair">
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Rattan Lounge Chair</h2>
+          <p class="text-gray-700 mb-4">Bohemian style chair with natural rattan and a cozy cushion.</p>
+          <del class="mr-2 text-sm text-slate-400">$420</del><span class="text-xl text-green-600">$349</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NewsLetter -->
+  <section class="mt-14">
+    <div class="bg-zinc-800 py-8">
+      <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row">
+        <div class="md:w-1/2 mb-8 md:mb-0 flex gap-2">
+          <img src="Images/NWL1.png" class="h-52 w-52 object-cover shadow-lg" alt="">
+          <img src="Images/NWL2.png" class="h-52 w-52 object-cover shadow-lg" alt="">
+        </div>
+        <div class="md:w-1/2">
+          <div class="p-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Subscribe to our NewsLetter</h2>
+            <form class="relative">
+              <input class="w-full px-4 py-2 relative" type="email" name="email" id="email"
+                placeholder="Your email address">
+              <button
+                class="absolute right-0 top-0 btn bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-6">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimony -->
+  <section class="container mx-auto mt-20">
+    <h2 class="text-3xl font-semibold mb-8 text-center">Testimonials</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="bg-white p-6 rounded-lg shadow-md flex items-center flex-col">
+        <img src="Images/Sarah k.png" class="h-20 w-20 rounded-full mb-4 object-cover" alt="Sarah K">
+        <p class="text-gray-700 mb-4 text-center">"I couldn't be happier with my purchase! The craftsmanship of the
+          dining set I ordered is top-notch—solid wood, smooth finish, and elegant design. It instantly elevated the
+          look of my home. Delivery was prompt, and the assembly instructions were straightforward. I’ll definitely be
+          coming back for more!"</p>
+        <p class="text-gray-700 font-semibold">- Sarah K</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md flex items-center flex-col">
+        <img src="Images/John Doe.png" class="h-20 w-20 rounded-full mb-4 object-cover" alt="John Doe">
+        <p class="text-gray-700 mb-4 text-center">"Finding furniture that’s both stylish and functional can be tough,
+          but this site nailed it. My new sectional sofa is incredibly comfortable and looks amazing in my living room.
+          What impressed me most was the quality—far better than anything I’ve seen in local stores, and at a great
+          price!"</p>
+        <p class="text-gray-700 font-semibold">- John Doe</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md flex items-center flex-col">
+        <img src="Images/Lisa-M.png" class="h-20 w-20 rounded-full mb-4 object-cover" alt="Lisa M">
+        <p class="text-gray-700 mb-4 text-center">"This has been one of the best online shopping experiences I’ve had.
+          The customer service team was helpful and responsive, answering all my questions before I placed my order. The
+          TV console arrived in perfect condition and looks even better in person. Highly recommend this store to anyone
+          furnishing their space."</p>
+        <p class="text-gray-700 font-semibold">- Lisa M</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <footer class="bg-zinc-800 text-white py-12 mt-15">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between px-4">
+    
+    <!-- col1 -->
+    <div class="mb-8 md:mb-0">
+      <div class="text-white font-bold py-2">
+        <a href="#" class="text-3xl font-bold border-2 px-2 py-1 inline-block">
+          <i class="bx bxs-home-smile mr-2"></i>Furniture
+        </a>
+      </div>
+    </div>
+
+    <!-- col2 -->
+    <div class="mb-8 md:mb-0">
+      <h4 class="text-lg font-semibold mb-4">Links</h4>
+      <ul>
+        <li><a href="#" class="block hover:text-gray-400 mb-1">Home</a></li>
+        <li><a href="#" class="block hover:text-gray-400 mb-1">About</a></li>
+        <li><a href="#" class="block hover:text-gray-400 mb-1">Products</a></li>
+        <li><a href="#" class="block hover:text-gray-400 mb-1">Testimony</a></li>
+      </ul>
+    </div>
+
+    <!-- col3 -->
+    <div class="mb-8 md:mb-0">
+      <h4 class="text-lg font-semibold mb-4">Contact</h4>
+      <ul>
+        <li><a href="#" class="block hover:text-gray-400 mb-1">FAQ</a></li>
+        <li><a href="#" class="block hover:text-gray-400 mb-1">Blog</a></li>
+        <li><a href="#" class="block hover:text-gray-400 mb-1">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- col4 -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Social</h4>
+      <ul>
+        <li><a href="#" class="block hover:text-gray-400 mb-1">1800-233-543</a></li>
+        <li><a href="mailto:furniture@mail.com" class="block hover:text-gray-400 mb-1">Furniture@mail.com</a></li>
+      </ul>
+      <div class="flex gap-4 mt-4 text-2xl">
+        <a href="#"><i class="fa-brands fa-facebook cursor-pointer block hover:text-gray-400"></i></a>
+        <a href="#"><i class="fa-brands fa-square-instagram cursor-pointer block hover:text-gray-400"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube cursor-pointer block hover:text-gray-400"></i></a>
+        <a href="#"><i class="fa-brands fa-square-twitter cursor-pointer block hover:text-gray-400"></i></a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+
+</html>
